@@ -15,8 +15,7 @@ gulp.task('jekyll', function() {
 	return gulp.src('', {quiet: false})
 	.pipe(shell([
 		'rm -rf ' + paths.deploy,
-		'jekyll build -s '+paths.source,
-		'cp -R _site/ ' + paths.deploy
+		'jekyll build -s '+paths.source + ' -d '+paths.deploy
 	]));
 });
 
